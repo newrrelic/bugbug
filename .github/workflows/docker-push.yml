@@ -20,10 +20,10 @@ jobs:
       - id: gcp-auth
         name: Google authentication
         uses: google-github-actions/auth@v2
-        with:
-          token_format: "access_token"
-          service_account: artifact-writer@${{ vars.GCP_PROJECT_ID }}.iam.gserviceaccount.com
-          workload_identity_provider: ${{ vars.GCPV2_GITHUB_WORKLOAD_IDENTITY_PROVIDER }}
+        # with:
+        #   token_format: "access_token"
+        #   service_account: artifact-writer@${{ vars.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+        #   workload_identity_provider: ${{ vars.GCPV2_GITHUB_WORKLOAD_IDENTITY_PROVIDER }}
 
       - name: Pull web image
         run: docker pull mozilla/bugbug-http-service:${{ github.event.inputs.image_tag }}
